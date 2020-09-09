@@ -1,2 +1,2 @@
 B#!/bin/bash
-ls -p -a -m
+ls -pam
