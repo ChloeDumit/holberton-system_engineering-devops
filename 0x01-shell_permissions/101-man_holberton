@@ -1,6 +1,4 @@
-\" Process this file with
-.\" groff -man -Tascii foo.1
-.\"
+
 .TH man 2 "10 December 1945" 0.32 "eniac man page"
 .SH NAME
 .B eniac
