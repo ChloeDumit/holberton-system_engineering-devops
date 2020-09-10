@@ -1,0 +1,19 @@
+.Sh NAME
+.B eniac
+- the first electronic general-purpose digital computer.
+
+.SH SYNOPSIS
+eniac
+
+.SH DESCRIPTION
+Eniac was Turing-complete, and able to solve "a large class of numerical problems" through reprogramming.
+
+.SH SEE ALSO
+.BR BUGS,
+.PP
+No known bugs.
+
+
+.SH AUTHOR
+.PP
+University of Pennsylvania
