@@ -1,23 +1,17 @@
 \" Process this file with
-.\" groff -man -Tascii man(2)
+.\" groff -man -Tascii foo.1
 .\"
-.TH FOO 1 "MARCH 1995" Linux "eniac man page"
-.Sh NAME
-.B eniac
-- the first electronic general-purpose digital computer.
-
+.TH man 2 "10 December 1945" 0.32 "eniac man page"
+.SH NAME
+eniac - the first electronic general-purpose digital computer.
 .SH SYNOPSIS
-eniac
-
+.B eniac
 .SH DESCRIPTION
-Eniac was Turing-complete, and able to solve "a large class of numerical problems" through reprogramming.
-
+.B Eniac was Turing-complete, and able to solve "a large class of numerical problems" through reprogramming.
+.SH OPTIONS
+.B eniac does not take any options.
 .SH SEE ALSO
-.BR BUGS,
-.PP
-No known bugs.
-
-
+.B BUGS
+.B No known bugs
 .SH AUTHOR
-.PP
-University of Pennsylvania
+.B University of Pennsylvania
