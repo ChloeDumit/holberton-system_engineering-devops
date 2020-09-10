@@ -11,7 +11,8 @@ eniac - the first electronic general-purpose digital computer.
 .SH OPTIONS
 .B eniac does not take any options.
 .SH SEE ALSO
-.B BUGS
-.B No known bugs
+ENIAC could be programmed to perform complex sequences of operations(2), including loops(2), branches(2), and subroutines(2).
+.SH BUGS
+ No known bugs.
 .SH AUTHOR
 .B University of Pennsylvania
