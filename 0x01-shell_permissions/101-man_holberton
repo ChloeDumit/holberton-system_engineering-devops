@@ -1,3 +1,7 @@
+\" Process this file with
+.\" groff -man -Tascii man(2)
+.\"
+.TH FOO 1 "MARCH 1995" Linux "eniac man page"
 .Sh NAME
 .B eniac
 - the first electronic general-purpose digital computer.
