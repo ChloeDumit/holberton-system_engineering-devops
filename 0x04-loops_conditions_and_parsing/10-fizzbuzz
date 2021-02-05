@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Numbers from 1 to 100
-for ((i = 0; i <= 100; i++))
+i="0"
+while [ $i -le 100 ]
 do
     if [[ $((i % 5)) = 0 && $((i % 3)) = 0 ]]
     then
@@ -14,4 +15,5 @@ do
     else
     echo $i
     fi
+i=$((i+1))
 done
