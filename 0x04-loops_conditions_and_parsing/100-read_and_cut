@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Numbers from 1 to 100
+f="/etc/passwd"
+while read line
+do
+	echo "$line" | cut -d':' -f 1,3,6
+done < "$f"
