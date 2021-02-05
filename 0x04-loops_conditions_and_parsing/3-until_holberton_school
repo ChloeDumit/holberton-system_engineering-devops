@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Printing 10 times with until
-i=0
+i="0"
 until [ $i -eq 10 ]
 do
 echo "Holberton School"
