@@ -8,5 +8,5 @@ do
     echo "Hi"
     fi
     echo "Holberton School"
-    ((i++))
+    i=$((i+1))
 done
