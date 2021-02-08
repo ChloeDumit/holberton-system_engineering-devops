@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 #write bash pid
-echo "$(pgrep -f /var/run/holbertonscript.pid)" | sudo dd status=none of=/var/run/holbertonscript.pid
+sudo sh -c "echo $$ >> /var/run/holbertonscript.pid"
+trap 'echo "I hate the kill command"; sudo rm -rf /var/run/holbertonscript.pid; exit 0' SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap "sudo rm -rf /var/run/holbertonscript.pid; exit 0" SIGQUIT
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
