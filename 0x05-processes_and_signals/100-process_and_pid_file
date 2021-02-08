@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#write bash pid
+echo "$(pgrep -f /var/run/holbertonscript.pid)" | sudo dd status=none of=/var/run/holbertonscript.pid
