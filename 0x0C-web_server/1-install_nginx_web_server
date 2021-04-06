@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 #install nginx
-ssh ubuntu@35.231.97.140 -i ~/.ssh/holberton 'apt-get update; sudo apt-get -y install nginx; echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html'
+apt-get update -y
+apt-get install -y nginx
+ufw allow 'Nginx HTTP'
+chown -R "$USER":"$USER" /var/www/html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+service nginx start
