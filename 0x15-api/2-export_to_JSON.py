@@ -1,29 +1,35 @@
 #!/usr/bin/python3
-""" This script dumps a dict into a JSON file
-"""
+""" Program that Gather data from an API and Export to JSON """
 import json
 import requests
 from sys import argv
 
+if __name__ == "__main__":
+    """ Program Entry point """
+    empId = argv[1]
+    url_todo = 'https://jsonplaceholder.typicode.com/todos'
+    url_user = 'https://jsonplaceholder.typicode.com/users'
+    payload1 = {'userId': empId}
+    payload2 = {'id': empId}
 
-if __name__ == '__main__':
-    user_name = requests.get('https://jsonplaceholder.typicode.com/users/{}/'.
-                             format(int(argv[1]))).json().get('username')
+    req_todo = requests.get(url_todo, params=payload1)
+    req_user = requests.get(url_user, params=payload2)
 
-    user_tasks = requests.\
-        get('https://jsonplaceholder.typicode.com/users/{}/todos'.
-            format(int(argv[1]))).json()
+    # Getting the NUMBER_OF_DONE_TASKS and total tasks
+    total_tasks = req_todo.json()
+    # Employee name from users
+    user_data = req_user.json()
+    emp_name = user_data[0].get('username')
+    list_dict = []
+    user_tasks = {}
 
-    tasks_list = []
-
-    for item in user_tasks:
-        new_dict = {}
-        new_dict["task"] = item.get('title')
-        new_dict["completed"] = item.get('completed')
-        new_dict["username"] = user_name
-        tasks_list.append(new_dict)
-
-    complete_dict = {argv[1]: tasks_list}
-
-    with open('{}.json'.format(argv[1]), mode='w') as file:
-        json.dump(complete_dict, file)
+    with open('{}.json'.format(empId), 'w') as json_file:
+        for task in total_tasks:
+            task_info = {}
+            task_info['task'] = task.get('title')
+            task_info['completed'] = task.get('completed')
+            task_info['username'] = emp_name
+            list_dict.append(task_info)
+        user_tasks[empId] = list_dict
+        info = json.dumps(user_tasks)
+        json_file.write(info)
