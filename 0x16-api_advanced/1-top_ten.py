@@ -7,12 +7,15 @@ def top_ten(subreddit):
     of the subreddit"""
     import requests
 
-    sub_info = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
-                            .format(subreddit),
-                            headers={"User-Agent": "My-User-Agent"},
-                            allow_redirects=False)
-    if sub_info.status_code == 200:
-        [print(child.get("data").get("title"))
-         for child in sub_info.json().get("data").get("children")] 
+    req = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
+                       .format(subreddit),
+                       headers={"User-Agent": "My-User-Agent"},
+                       allow_redirects=False)
+    if req.status_code == 200:
+        req_json = req.json()
+        list_hot = req_json['data']['children']
+        for i in range(len(list_hot)):
+            title = list_hot[i]['data']['title']
+            print(title)
     else:
-        print('None')    
+        print('None')

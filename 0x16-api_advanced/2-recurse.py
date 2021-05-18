@@ -5,7 +5,8 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=''):
     """ recurse api"""
-    url_hot = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(subreddit, after)
+    url_hot = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
+                subreddit, after)
     h = {'User-Agent': 'My User Agent'}
     req = requests.get(url_hot, headers=h, allow_redirects=False)
 
